@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <style>
+    body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  background-image: url('img/happy-birthday-background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed
+}
+
+.card {
+  width: 300px;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  animation: bounce 1s infinite alternate;
+}
+.card1 {
+  width: 300px;
+  height: 300px;
+  
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  animation: bounce 1s infinite alternate;
+  display: none;
+  background: rgb(226,52,175);
+background: linear-gradient(184deg, rgba(226,52,175,1) 0%, rgba(45,160,219,1) 67%);
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.card h1 {
+  font-size: 24px;
+  color: #e63a93;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px;
+  color: #0c23a6;
+  text-shadow: 0px 6px 4px black;
+}
+.card1 h1 {
+  font-size: 24px;
+  color: #f5f521;
+  margin-bottom: 10px;
+}
+
+.card1 p {
+  font-size: 16px;
+  color: white;
+  text-shadow: 0px 0px 4px black;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #0066cc;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  background: rgb(6,6,5);
+background: linear-gradient(166deg, rgba(6,6,5,1) 0%, rgba(45,219,173,1) 66%);
+}
+
+.button:hover {
+  transition: 0.1s;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 6px 4px rgb(0, 0, 0);
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, #4df3ff, #c31b1b);
+    z-index: -1;
+} */
+#img{
+  position: absolute;
+}
+
+h1 {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
+}
+@keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  #flashing-text {
+    animation: flash 2s infinite;
+  }
+  </style>
+</head>
+
+<body >
+    <!-- <img id="img" src="img/happy-birthday-background.jpg" alt=""> -->
+    <!-- <div class="background"></div> -->
+    <div class="container">
+        <div class="card">
+            <h1>Happy Birthday ms.Gharibi</h1>
+            <p>✨🎉🎂✨🍰🥳</p>
+            <div onclick="playMusic()" class="button">click here</div>
+          </div>
+        <div class="card1">
+            <h1 id="flashing-text">Happy Birthday ms.Gharibi</h1>
+            <p >Happy Birthday to a wonderful English teacher! Your dedication, passion, and creativity have inspired so many students, including myself, to learn and grow. Thank you for all that you do and for making learning a new language such an enjoyable and rewarding experience. Wishing you a day filled with  laughter, and all the happiness in the world. Cheers to you on your special day! <br>
+              ✨🎉🎂✨🍰🥳
+            </p>
+            <!-- <div class="button1"></div> -->
+          </div>
+          <audio id="music" loop hidden>
+            <source src="music/happy-birthday-sound.mp3" type="audio/mp3">
+            Your browser does not support the audio tag.
+          </audio>
+    </div>
+
+
+  
+
+  <script>
+    let switchBtn = document.querySelector(".button");
+    let containerCard = document.querySelector(".card");
+    let containerCard1 = document.querySelector(".card1");
+    let containerDiv = document.querySelector(".container");
+    // console.log(containerCard);
+    switchBtn.addEventListener('click',()=>{
+        containerCard.style.display = "none"
+        containerCard1.style.display = "block"
+    })
+
+  var music = document.getElementById("music");
+
+  function playMusic() {
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
+  }
+
+  </script>
+</body>
+
+</html>
